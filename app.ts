@@ -33,7 +33,7 @@ try {
 	console.error('uploads 폴더 확인 중 에러 발생', error);
 }
 
-app.set('PORT', process.env.PORT || 3448);
+app.set('PORT', process.env.PORT || 8080);
 
 if (process.env.NODE_ENV === 'production') {
 	app.enable('trust proxy');
@@ -83,7 +83,7 @@ app.use(passport.session());
 
 // 서버로 그냥 접속 시도할 경우
 app.get('/', (req, res, next) => {
-	res.sendFile(path.join(__dirname, '../client', 'index.html'));
+	res.send('API Server')
 });
 
 // CLIENT에서 보내는 API 요청
