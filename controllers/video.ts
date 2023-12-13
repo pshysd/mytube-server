@@ -51,7 +51,11 @@ export const getVideos: RequestHandler = async (req, res, next) => {
 	try {
 		const videos = await Video.find().populate('writer');
 
-		if (videos) res.json(videos);
+		if (videos) {
+			res.json(videos);
+		} else {
+			res.send('동영상이 존재하지 않습니다.');
+		}
 	} catch (error) {
 		const err = error as Error;
 		err.status = 400;
