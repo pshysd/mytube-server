@@ -21,6 +21,7 @@ const connect = () => {
 	mongoose
 		.connect(process.env.mongoURI!, {
 			dbName: 'mytube',
+			ssl: true,
 		})
 		.then(() => {
 			console.log('mongoDB Connected');

@@ -14,6 +14,7 @@ import passportConfig from './passport';
 import morgan from 'morgan';
 import logger from './logger';
 import apiRouter from './routes';
+import { RequestHandler } from 'express';
 
 dotenv.config();
 
@@ -83,7 +84,7 @@ app.use(passport.session());
 
 // 서버로 그냥 접속 시도할 경우
 app.get('/', (req, res, next) => {
-	res.send('API Server')
+	res.send('API Server');
 });
 
 // CLIENT에서 보내는 API 요청
