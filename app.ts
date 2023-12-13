@@ -54,7 +54,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use(
 	cors({
 		origin: '*',
-		methods: 'GET, POST',
+		methods: ['GET', 'POST'],
 		credentials: true,
 	})
 );
